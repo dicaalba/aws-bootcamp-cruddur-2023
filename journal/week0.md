@@ -6,7 +6,7 @@
 *   [x] Create an Admin User
 *   [x] Conceptual Diagram in Lucid Charts
 *   [x] Logical Architectural Diagram
-*   [ ] Install and verify the AWS CLI on gitpod workspaces
+*   [x] Install and verify the AWS CLI on gitpod workspaces
 *   [x] Create Billing and Budget Alarms using CLI
 *   [ ] Use EventBridge to hookup Health Dashboard to SNS and send a notification when there is a service health issue.
 *   [ ] Review all the questions about each pillar in the Well Architected Tool (No specialized lens)
@@ -66,6 +66,16 @@ In my case, I installed AWS CLI on my local machine.
 
 In the case of GitPod, I installed the following instructions as CLI: [https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html)
 
+![](https://33333.cdn.cke-cs.com/kSW7V9NHUXugvhoQeFaf/images/602ee5f4a467fe6de66956108b694f53728f4253c7deecb0.png)
+
+And setting environment variables
+
+![](https://33333.cdn.cke-cs.com/kSW7V9NHUXugvhoQeFaf/images/a4b81576570b932f337b232e563b385f0868526b7cdfade4.png)
+
+```plaintext
+$ aws sts get-session-token --serial-number arn-of-the-mfa-device --token-code code-from-token
+```
+
 ### Create Billing and Budget Alarms using CLI
 
 #### Billing
@@ -102,7 +112,6 @@ This is a new alarm, so we don't have sufficient data to show
 
 [alarm.json](https://github.com/dicaalba/aws-bootcamp-cruddur-2023/blob/main/aws/json/alarm-1.json)
 
-
 #### Budget
 
 For this task, I searched for more information on [AWS Documentation](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_DescribeBudgets.html)
@@ -126,7 +135,6 @@ aws budgets create-budget --account-id $ACCOUNT_ID --budget file://planned-budge
 I configure AWS CLI with the new credentials of the users of my AWS Organization.
 
 ![](https://33333.cdn.cke-cs.com/kSW7V9NHUXugvhoQeFaf/images/4e13f7dbbdf6c6cc351caac58c7ecf1715a275cac5d26feb.png)
-
 
 ### Open a support ticket and request a service limit
 
